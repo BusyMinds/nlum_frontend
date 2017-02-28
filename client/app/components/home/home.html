@@ -1,0 +1,15 @@
+<header></header>
+
+<div class="marketing">
+  <form ng-submit="$ctrl.submit()">
+    <div class="form-group">
+      <input type="text" class="form-control" id="query" placeholder="How may I help you?" ng-model="$ctrl.q" autofocus>
+    </div>
+    <button type="submit" class="btn btn-default">{{ $ctrl.loading ? 'Loading...' :'Submit' }}</button>
+  </form>
+  <p>
+    <pre ng-if="$ctrl.result">{{ $ctrl.result|json }}</pre>
+  </p>
+</div>
+
+<footer></footer>
