@@ -1,10 +1,10 @@
-const UserFactory = function ($http, $log) {
+const UserFactory = function ($http, $log, NLUMEndpoint) {
   return {
     submitQuery,
   };
 
   function submitQuery(q) {
-    return $http.post('http://127.0.0.1:5000/parse', { q })
+    return $http.post(`${NLUMEndpoint}/parse`, { q })
       .then(onComplete)
       .catch(onFailed);
 
@@ -18,6 +18,6 @@ const UserFactory = function ($http, $log) {
   }
 };
 
-UserFactory.$inject = ['$http', '$log'];
+UserFactory.$inject = ['$http', '$log', 'NLUMEndpoint'];
 
 export default UserFactory;
